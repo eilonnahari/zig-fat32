@@ -1,4 +1,4 @@
-const GENERAL_FAT_BPB = struct {
+const GENERAL_FAT_BPB = packed struct {
     BS_jmpBoot: u3,
     BS_OEMName: [8]u8,
     BPB_BytesPerSector: u2,
@@ -15,7 +15,7 @@ const GENERAL_FAT_BPB = struct {
     BPB_TotalSectors32: u4,
 };
 
-const FAT_BPB = struct {
+const FAT_BPB = packed struct {
     GENERAL_FAT_BPB: general,
     BS_DriveNumber: u1,
     BS_Reserved1: u1,
@@ -28,7 +28,7 @@ const FAT_BPB = struct {
     SignatureWord: u2,
 };
 
-const FAT32_BPB = struct {
+const FAT32_BPB = packed struct {
     GENERAL_FAT_BPB: general,
     BPB_SizeOfFAT32: u4,
     BPB_ExtraFlags: u2,
