@@ -1,3 +1,4 @@
+/// TODO: Need to document all this parameters.
 const GENERAL_FAT_BPB = packed struct {
     BS_jmpBoot: u3,
     BS_OEMName: [8]u8,
